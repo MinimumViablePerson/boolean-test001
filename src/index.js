@@ -1,10 +1,19 @@
 import "./styles.css";
 
-document.getElementById("app").innerHTML = `
-<h1>Hello Vanilla!</h1>
-<div>
-  We use the same configuration as Parcel to bundle this sandbox, you can find more
-  info about Parcel 
-  <a href="https://parceljs.org" target="_blank" rel="noopener noreferrer">here</a>.
-</div>
-`;
+const app = document.getElementById("app");
+
+const title = document.createElement("h1");
+title.innerText = "Hello Vanilla!";
+
+const content = document.createElement("div");
+content.innerText =
+  "We use the same configuration as Parcel to bundle this sandbox, you can find more info about Parcel ";
+
+const link = document.createElement("a");
+link.setAttribute("href", "https://parceljs.org");
+link.setAttribute("target", "_blank");
+link.setAttribute("rel", "noopener noreferrer");
+link.innerText = "here";
+
+content.append(link);
+app.append(title, content);
